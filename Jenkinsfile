@@ -16,7 +16,7 @@ stage ('Docker Image Build') {
 
 stage ('Push Docker Image') {
        docker.withRegistry('https://registry.hub.docker.com','docker-credential') {
-        		app.push("1-${BUILD_NUMBER}")
+        		app.push("${BUILD_NUMBER}")
         		app.push("latest")
       	}
 }
