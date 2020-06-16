@@ -13,7 +13,7 @@ stage ('Build') {
 stage ('Docker Image Build') {
        app = docker.build("tabishkhan7/devops201:${BUILD_NUMBER}")
 }
-/*
+
 stage ('Push Docker Image') {
        docker.withRegistry('https://registry.hub.docker.com','docker-credential') {
         		app.push("1-${BUILD_NUMBER}")
@@ -25,5 +25,4 @@ stage ('Push Docker Image') {
 stage('Run Container') {
       sh "docker run -p 8082:8080 -d tabishkhan7/devops201"
 }
-*/
 }
